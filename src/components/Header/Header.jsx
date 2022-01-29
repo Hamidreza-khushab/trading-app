@@ -10,6 +10,7 @@ import Badge from 'react-bootstrap/Badge'
 import useLocalStorag from '../../command/useLocalStorag'
 import MarketMap from '../MarketMap/MarketMap';
 import { CryptoContext } from '../../CryptoContext';
+import useLocalStorage from '../../command/useLocalStorag'
 
 
 const Header = () => {
@@ -21,25 +22,26 @@ const Header = () => {
     const [numberOrders, setNumberOrders] = useLocalStorag('no', []);
     const [numberPostions, setNumberPositions] = useLocalStorag('np', []);
     const [ProfitOrLoss, setProfitOrLoss] = useState(0)
+    const [RecordingPosition, setRecordingPosition] = useLocalStorage('position', [])
 
-    // useEffect(() => {
-    //     const position = JSON.parse(window.localStorage.getItem('position'));
-    //     console.log(position);
-    //     console.log(price);
-    //     if (position.length !== 0) {
-    //         let update = 0
-    //         for (let i = 0; i < position.length; i++) {
-    //             for (let j = 0; j < price.length; j++) {
-    //                 if (position[i].name === price[j].id) {
-    //                     update = (price[j].current_price - position[i].EnterPint) * position[i].TradingValue + update
-    //                 }
-    //             }
-    //         }
-    //         setProfitOrLoss(update)
-    //     }
-    //     else
-    //         setProfitOrLoss(0)
-    // }, [price]);
+    useEffect(() => {
+
+        const position = JSON.parse(window.localStorage.getItem('position'));
+        console.log('pose', position);
+        if (position !== null) {
+            let update = 0
+            for (let i = 0; i < position.length; i++) {
+                for (let j = 0; j < price.length; j++) {
+                    if (position[i].name === price[j].id) {
+                        update = (price[j].current_price - position[i].EnterPint) * position[i].TradingValue + update
+                    }
+                }
+            }
+            setProfitOrLoss(update)
+        }
+        else
+            setRecordingPosition([])
+    }, [price]);
     return <div>
         <Navbar bg="dark" expand="lg" variant="dark" fixed="top">
             <Container fluid>
