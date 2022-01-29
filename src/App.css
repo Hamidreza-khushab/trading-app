@@ -1,0 +1,63 @@
+.table
+{
+    text-align: center;
+}
+.titleCryptoList
+{
+    margin-top: 4.5rem;
+    text-align: center !important;
+    margin-bottom: 1.25rem;
+}
+.spinner-grow
+{
+    position: fixed;
+    left: 45%;
+    top: 45%;
+}
+td{
+    cursor: pointer;
+}
+.modal-body
+{
+    display: flex;
+    justify-content: center;
+}
+.card
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-body
+{ 
+    text-align: center;
+}
+.card-text > p
+{
+    margin: 0;
+    font-size: large;
+}
+.btn
+{
+    margin-right: 1rem !important;
+    margin-left: 1rem !important;
+    text-decoration: none;
+    border: none;
+}
+.badge
+{
+    border-radius: 50%;
+}
+.container
+{
+    height: 74vh;
+    overflow: auto;
+    
+}
+
+.marketMaps
+{
+    display: flex;
+    flex-wrap: wrap;
+
+}
