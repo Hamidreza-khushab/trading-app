@@ -1,5 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { CryptoContext } from '../../CryptoContext';
+import { ResponsiveTreeMap } from '@nivo/treemap'
+
 import Modal from 'react-bootstrap/Modal';
 
 const MarketMap = ({ showMarket, hideModal }) => {
@@ -51,7 +53,9 @@ const MarketMap = ({ showMarket, hideModal }) => {
                 <Modal.Title>Market Map</Modal.Title>
             </Modal.Header>
             <Modal.Body>
+                {/* *********************************************************** */}
 
+                {/* ********************************************************** */}
             </Modal.Body>
         </Modal>
 
