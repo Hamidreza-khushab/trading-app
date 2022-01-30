@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { CryptoContext } from '../../CryptoContext';
-import { ResponsiveTreeMap } from '@nivo/treemap'
 
 import Modal from 'react-bootstrap/Modal';
 
