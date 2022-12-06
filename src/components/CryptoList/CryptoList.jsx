@@ -18,7 +18,6 @@ const CryptoList = () => {
         return y + z;
     }
     // ********************************************
-    // console.log(price);
     const { price, setPrice } = useContext(CryptoContext)
     const [selectCoin, setSelectCoin] = useState()
     const [show, setShow] = useState(false);
@@ -52,7 +51,7 @@ const CryptoList = () => {
                                 <td id={elementPrice.symbol}>{elementPrice.symbol}</td>
                                 <td id={elementPrice.symbol}>{separate(elementPrice.current_price)}&nbsp;$</td>
                                 <td id={elementPrice.symbol}>{separate(elementPrice.market_cap)}&nbsp;$</td>
-                                <td id={elementPrice.symbol} style={elementPrice.price_change_percentage_24h < 0 ? { color: '#c10' } : { color: '#000' }}>{elementPrice.price_change_percentage_24h.toFixed(2)}&nbsp;%</td>
+                                 <td id={elementPrice.symbol} style={parseFloat(elementPrice.price_change_percentage_24h) < 0 ? { color: '#c10' } : { color: '#000' }}>{parseFloat(elementPrice.price_change_percentage_24h).toFixed(2)}&nbsp;%</td> 
                             </tr>
                         ))
                     }

@@ -27,7 +27,6 @@ const Header = () => {
     useEffect(() => {
 
         const position = JSON.parse(window.localStorage.getItem('position'));
-        console.log('pose', position);
         if (position !== null) {
             let update = 0
             for (let i = 0; i < position.length; i++) {
