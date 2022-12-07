@@ -14,10 +14,8 @@ const MarketMap = ({ showMarket, hideModal }) => {
                 sum = sum + 1 
                 setData(data => [{ children: [{ name: price[i].symbol, size: parseFloat(price[i].market_cap) }] }, ...data])
             }
-            console.log(sum);
         }
     }, [])
-    console.log('data000', data);
     return <>
         <Modal
             show={showMarket} fullscreen={true} onHide={() => hideModal()}>
