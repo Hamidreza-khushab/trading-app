@@ -10,12 +10,12 @@ const MarketMap = ({ showMarket, hideModal }) => {
         let sum = 0 
         data.splice(0)
         for (let i = 0; i < price.length; i++) {
-            if (parseFloat(price[i].market_cap) > 700000000.00) {
+            if (parseFloat(price[i].market_cap) > 70000000.00) {
                 sum = sum + 1 
                 setData(data => [{ children: [{ name: price[i].symbol, size: parseFloat(price[i].market_cap) }] }, ...data])
             }
         }
-    }, [])
+    }, [price])
     return <>
         <Modal
             show={showMarket} fullscreen={true} onHide={() => hideModal()}>
